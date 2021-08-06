@@ -4,8 +4,8 @@
 declare module 'vue' {
   export interface GlobalComponents {
     FeatureCard: typeof import('./src/components/FeatureCard.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-  }
+    Footer: typeof import('./src/components/Footer.vue')['default']
+    }
 }
 
 export { }
