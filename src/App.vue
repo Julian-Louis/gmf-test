@@ -31,6 +31,7 @@
         :key="id"
       />
     </div>
+    <Footer/>
 </template>
 
 <script lang="ts">
