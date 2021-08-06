@@ -13,7 +13,8 @@ export default defineConfig({
             gr1: "#0055f5",
             gr2: "#40a4fd",
             white: "#ffffff",
-            grey:"#858586"
+            grey:"#858586",
+            discord:"#5865F2"
 
         }
     },
