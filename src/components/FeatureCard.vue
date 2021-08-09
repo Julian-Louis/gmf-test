@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-white rounded-xl w-112 text-center flex justify-center items-center flex-col shadow-xl">
+    <div class="bg-white rounded-xl w-112 text-center flex justify-center items-center flex-col shadow-xl p-4">
         <img class="h-24 my-8" v-bind:src="'./'+img+'.png'"/>
         <h2 class="font-bold text-3xl mb-4">{{name}}</h2>
         <p class="text-base text-grey mb-4">{{description}}</p>
