@@ -3,9 +3,14 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    ClockIcon: typeof import('./src/components/icons/ClockIcon.vue')['default']
     FeatureCard: typeof import('./src/components/FeatureCard.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
-    }
+    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    Navigation: typeof import('./src/components/Navigation.vue')['default']
+    SearchIcon: typeof import('./src/components/icons/SearchIcon.vue')['default']
+    YoutubeChannelModal: typeof import('./src/components/YoutubeChannelModal.vue')['default']
+  }
 }
 
 export { }
