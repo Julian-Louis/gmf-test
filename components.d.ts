@@ -4,11 +4,15 @@
 declare module 'vue' {
   export interface GlobalComponents {
     ClockIcon: typeof import('./src/components/icons/ClockIcon.vue')['default']
+    CloseIcon: typeof import('./src/components/icons/CloseIcon.vue')['default']
+    EyeIcon: typeof import('./src/components/icons/EyeIcon.vue')['default']
     FeatureCard: typeof import('./src/components/FeatureCard.vue')['default']
     Footer: typeof import('./src/components/Footer.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Navigation: typeof import('./src/components/Navigation.vue')['default']
+    PeopleIcon: typeof import('./src/components/icons/PeopleIcon.vue')['default']
     SearchIcon: typeof import('./src/components/icons/SearchIcon.vue')['default']
+    VideoIcon: typeof import('./src/components/icons/VideoIcon.vue')['default']
     YoutubeChannelModal: typeof import('./src/components/YoutubeChannelModal.vue')['default']
   }
 }
