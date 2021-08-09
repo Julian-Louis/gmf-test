@@ -14,8 +14,12 @@
           >
         </li>
         <li>
-          <div class="flex items-center border border-white border-2 rounded-full">
-            <input v-model="input"  @keyup.enter="submit" 
+          <div
+            class="flex items-center border border-white border-2 rounded-full"
+          >
+            <input
+              v-model="input"
+              @keyup.enter="submit"
               type="text"
               placeholder="Chaîne youtube"
               class="
@@ -27,7 +31,7 @@
                 placeholder-white placeholder-opacity-60
               "
             />
-            <SearchIcon class="mr-2 h-4" />
+            <SearchIcon v-on:click="submit" class="mr-2 h-4 cursor-pointer" />
           </div>
         </li>
       </ul>
@@ -41,21 +45,21 @@ li {
 </style>
 
 <script lang="ts">
-  import { defineComponent } from "vue";
-  
-  export default defineComponent({
-    data(){
-      return{
-        input: "",
-      }
-    },
-    emits: ['input'],
+import { defineComponent } from "vue";
 
-    methods:{
-      submit(){
-        console.log(this.input)
-        this.$emit('input',this.input)
-      }
-    }
-  })
+export default defineComponent({
+  data() {
+    return {
+      input: "",
+    };
+  },
+
+  methods: {
+    submit() {
+      this.$emit("inputSubmit", this.input);
+    },
+    
+    
+  },
+});
 </script>
