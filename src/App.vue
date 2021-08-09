@@ -1,13 +1,9 @@
 <template>
+
+  <YoutubeChannelModal v-on:inputSubmit="recieveEvent" :name="youtuberModal" v-if="youtuberModal"/>
   <header class="min-h-650px bg-gradient-to-r from-gr1 to-gr2">
-    <nav>
-      <ul>
-        <li>Accueil</li>
-        <li></li>
-        <li></li>
-      </ul>
-    </nav>
-    <div class="text-center text-white">
+    <Navigation v-on:inputSubmit="recieveEvent" />
+    <div class="text-center text-white mt-12">
       <h1 class="text-3rem mb-8 font-medium">I ♥ Garry's Mod France</h1>
       <p class="text-xl font-thin mb-16">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br />
@@ -15,38 +11,64 @@
         minim veniam
       </p>
       <a
-        class="text-lg font-medium border border-2 px-8 py-2 rounded-full"
+        class="
+          text-lg text-white
+          font-medium
+          border border-2
+          px-8
+          py-2
+          rounded-full
+        "
         href="https://discord.com"
         >Rejoindre le serveur Discord</a
       >
     </div>
-
   </header>
-  <div class="flex gap-8 justify-center -mt-48">
-      <FeatureCard
-        v-for="{ id, name, description,img } in features"
-        :name="name"
-        :description="description"
-        :img="img"
-        :key="id"
-      />
-    </div>
-    <Footer/>
+  <div
+    class="flex flex-col gap-8 justify-center items-center -mt-48 lg:(flex-row)"
+  >
+    <FeatureCard
+      v-for="{ id, name, description, img } in features"
+      :name="name"
+      :description="description"
+      :img="img"
+      :key="id"
+    />
+  </div>
+  <Footer />
+  
 </template>
 
 <script lang="ts">
+
 import { defineComponent } from "vue";
-import FeatureCard from "./components/FeatureCard.vue";
 
 export default defineComponent({
   name: "App",
+  mounted(){
+    let googleAPI = document.createElement('script')
+    googleAPI.setAttribute('src', 'https://apis.google.com/js/api.js')
+      document.head.appendChild(googleAPI)
+  },
+  methods: {
+       //evInFather also triggers when the clickBtn event in the Child subcomponent is emit ted    
+       recieveEvent(data) {
+          console.log(data);
+          this.youtuberModal = data 
+          console.log(this.youtuberModal)
+       }
+    },
+    emits: ['inputSubmit'],
+  
   data() {
     return {
+      youtuberModal: null,
       features: [
         {
           id: "1",
           name: "Certification",
-          description: "desc",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis ac lacus ac gravida. Vivamus interdum enim quis sem volutpat, a blandit metus tincidunt. ",
           img: "certification",
         },
         {
@@ -59,7 +81,8 @@ export default defineComponent({
         {
           id: "3",
           name: "Discord",
-          description: "desc",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam facilisis ac lacus ac gravida. Vivamus interdum enim quis sem volutpat, a blandit metus tincidunt. ",
           img: "discord",
         },
       ],
@@ -72,5 +95,8 @@ export default defineComponent({
 
 body {
   font-family: "Lato", sans-serif;
+}
+*:focus {
+  outline: 0 !important;
 }
 </style>
