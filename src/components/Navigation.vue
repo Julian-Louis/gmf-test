@@ -15,7 +15,7 @@
         </li>
         <li>
           <div
-            class="flex items-center borde border-white border-2 rounded-full"
+            class="flex items-center border border-white border-2 rounded-full"
           >
             <input
               v-model="input"
