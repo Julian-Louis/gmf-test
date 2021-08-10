@@ -85,7 +85,6 @@
 import { defineComponent } from "vue";
 import EyeIcon from "./icons/EyeIcon.vue";
 import PeopleIcon from "./icons/PeopleIcon.vue";
-
 interface ChannelModal {
   channelData: Object|null;
 }
