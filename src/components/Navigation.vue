@@ -1,10 +1,10 @@
 <template>
-  <div class="flex py-6">
-    <div class="flex-1">
-      <img class="h-12 ml-54" src="/gmod.png" alt="Garry's Mod Logo" />
+  <div class="flex py-6 flex-col md:flex-row">
+    <div class="flex-1 flex items-center justify-center ">
+      <img class="h-12" src="/gmod.png" alt="Garry's Mod Logo" />
     </div>
-    <div class="flex-1">
-      <ul class="font-medium inline text-lg">
+    <div class="flex-1 mt-6 md:mt-0 ">
+      <ul class="font-medium inline text-lg flex flex-col items-center gap-4 md:(flex-row gap-0)">
         <li><a href="/" class="text-white inline p-6">Accueil</a></li>
         <li>
           <a
@@ -15,7 +15,7 @@
         </li>
         <li>
           <div
-            class="flex items-center border border-white border-2 rounded-full"
+            class="flex items-center borde border-white border-2 rounded-full"
           >
             <input
               v-model="input"
