@@ -8,7 +8,8 @@
         pb-8
         top-32
         shadow-2xl
-        w-1/3
+        w-9/12
+        lg:w-1/3
         flex
         items-center
         justify-center
@@ -16,7 +17,7 @@
         px-8
       "
     >
-      <CloseIcon class="absolute right-4 top-4" v-on:click="submit" />
+      <CloseIcon class="absolute right-4 top-4 cursor-pointer" v-on:click="submit" />
       <img
         class="rounded-full h-32 mt-8"
         :src="channelData.snippet.thumbnails.default.url"
@@ -86,14 +87,14 @@ import EyeIcon from "./icons/EyeIcon.vue";
 import PeopleIcon from "./icons/PeopleIcon.vue";
 
 interface ChannelModal {
-  channelData: Object | "";
+  channelData: Object|null;
 }
 
 export default defineComponent({
   props: ["name"],
   data() {
     return {
-      channelData: "",
+      channelData: null,
       error: "",
     };
   },
@@ -112,8 +113,6 @@ export default defineComponent({
     },
     async fetchData() {
       const requestHeaders = new Headers();
-      // requestHeaders.append('Authorization', 'Bearer AIzaSyAZJ-2CgIQoa80pZEnbujSoP7hbDiSDHK8');
-
       const response = await fetch(
         "http://localhost:3333/channel/" + this.name,
         {
