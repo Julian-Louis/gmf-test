@@ -113,7 +113,7 @@ export default defineComponent({
     async fetchData() {
       const requestHeaders = new Headers();
       const response = await fetch(
-        "http://localhost:3333/channel/" + this.name,
+        "https://gmf.julianlouis.fr/channel/" + this.name,
         {
           headers: requestHeaders,
         }
